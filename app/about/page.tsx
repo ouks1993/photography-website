@@ -1,13 +1,10 @@
+import Image from "@/components/Photo";
 import Link from "next/link";
-import { fetchAllUserPhotos, Photo500px } from "@/lib/500px";
+import { allPhotos } from "@/lib/photos";
 
-const HERO_ID = 1105970784;
-const PORTRAIT_ID = 1084068843;
-const STRIP_IDS = [1112023461, 1111705039, 1101819758, 1086382914];
-
-function find(photos: Photo500px[], id: number) {
-  return photos.find((p) => p.id === id);
-}
+const hero = allPhotos[16];
+const portrait = allPhotos[26];
+const strip = [allPhotos[1], allPhotos[3], allPhotos[21], allPhotos[14]];
 
 const awards = [
   { year: "2025", title: "500px Community Award", body: "Top contributor — Wildlife category, North Africa" },
@@ -22,22 +19,12 @@ const gear = [
   { category: "Support", items: ["Gitzo GT5562LTS Tripod", "Wimberley WH-200 Gimbal Head", "Manfrotto 190 for macro"] },
 ];
 
-export default async function AboutPage() {
-  const photos = await fetchAllUserPhotos(3);
-  const hero = find(photos, HERO_ID);
-  const portrait = find(photos, PORTRAIT_ID);
-  const strip = STRIP_IDS.map((id) => find(photos, id)).filter(Boolean) as Photo500px[];
-
+export default function AboutPage() {
   return (
     <>
       {/* Hero */}
       <section className="relative h-[60vh] min-h-[400px] overflow-hidden">
-        {hero ? (
-          // eslint-disable-next-line @next/next/no-img-element
-          <img src={hero.image_url} alt={hero.name} className="absolute inset-0 w-full h-full object-cover" />
-        ) : (
-          <div className="absolute inset-0 bg-charcoal" />
-        )}
+        <Image src={hero.src} alt={hero.alt} fill className="object-cover" priority sizes="100vw" />
         <div className="absolute inset-0 bg-black/45" />
         <div className="absolute inset-0 flex items-end px-6 md:px-12 pb-16 max-w-7xl mx-auto">
           <div>
@@ -78,12 +65,9 @@ export default async function AboutPage() {
             </div>
           </div>
           <div className="md:col-span-5">
-            {portrait && (
-              <div className="relative aspect-[3/4] overflow-hidden mb-6">
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src={portrait.image_url} alt={portrait.name} className="w-full h-full object-cover" />
-              </div>
-            )}
+            <div className="relative aspect-[3/4] overflow-hidden mb-6">
+              <Image src={portrait.src} alt={portrait.alt} fill className="object-cover" sizes="(max-width: 768px) 100vw, 40vw" />
+            </div>
             <div className="grid grid-cols-2 gap-4 text-sm">
               {[["Based", "Algeria"], ["Speciality", "Birds & Wildlife"], ["Focus Region", "Maghreb & Mediterranean"], ["500px", "El Ouks"]].map(([label, value]) => (
                 <div key={label}>
@@ -97,18 +81,15 @@ export default async function AboutPage() {
       </section>
 
       {/* Gallery strip */}
-      {strip.length > 0 && (
-        <section className="max-w-7xl mx-auto px-6 md:px-12 pb-20">
-          <div className="grid grid-cols-4 gap-2">
-            {strip.map((photo) => (
-              <div key={photo.id} className="relative aspect-square overflow-hidden">
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src={photo.image_url} alt={photo.name} className="w-full h-full object-cover" />
-              </div>
-            ))}
-          </div>
-        </section>
-      )}
+      <section className="max-w-7xl mx-auto px-6 md:px-12 pb-20">
+        <div className="grid grid-cols-4 gap-2">
+          {strip.map((photo) => (
+            <div key={photo.src} className="relative aspect-square overflow-hidden">
+              <Image src={photo.src} alt={photo.alt} fill className="object-cover" sizes="25vw" />
+            </div>
+          ))}
+        </div>
+      </section>
 
       {/* Awards */}
       <section className="bg-surface py-20 md:py-28">

@@ -1,9 +1,7 @@
-import { fetchAllUserPhotos } from "@/lib/500px";
+import { allPhotos } from "@/lib/photos";
 import PhotoGallery from "./_components/PhotoGallery";
 
-export default async function PortfolioPage() {
-  const photos = await fetchAllUserPhotos(3); // fetch 3 pages = 60 photos
-
+export default function PortfolioPage() {
   return (
     <>
       <section className="pt-32 pb-12 px-6 md:px-12 max-w-7xl mx-auto">
@@ -15,7 +13,7 @@ export default async function PortfolioPage() {
         </h1>
       </section>
 
-      <PhotoGallery photos={photos} />
+      <PhotoGallery photos={allPhotos} />
     </>
   );
 }

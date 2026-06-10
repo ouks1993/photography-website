@@ -1,9 +1,10 @@
+import Image from "@/components/Photo";
 import Link from "next/link";
-import { fetchAllUserPhotos } from "@/lib/500px";
+import { allPhotos } from "@/lib/photos";
 
 export type PrintMeta = {
   id: string;
-  photoId: number;
+  photoIndex: number;
   title: string;
   location: string;
   category: string;
@@ -12,18 +13,15 @@ export type PrintMeta = {
 };
 
 export const printsMeta: PrintMeta[] = [
-  { id: "1", photoId: 1101819758, title: "Large Seagull", location: "Algerian Coast", category: "Waterbirds", description: "A large seagull rides the coastal wind above the Algerian sea. The most viewed image in my portfolio — captured in a single, unguarded moment of flight.", prices: [{ size: "8×10\"", price: 180 }, { size: "11×14\"", price: 260 }, { size: "16×20\"", price: 380 }, { size: "20×30\"", price: 520 }] },
-  { id: "2", photoId: 1111705039, title: "Athene noctua", location: "Algeria", category: "Raptors & Owls", description: "The Little Owl watches the world with wide amber eyes in the last light of an Algerian afternoon. An intimate owl portrait made after weeks of patient observation.", prices: [{ size: "8×10\"", price: 220 }, { size: "11×14\"", price: 310 }, { size: "16×20\"", price: 440 }, { size: "20×30\"", price: 600 }] },
-  { id: "3", photoId: 1112023461, title: "Strix mauritanica", location: "Atlas Blidéen, Algeria", category: "Raptors & Owls", description: "The Maghreb Owl — endemic to North Africa — photographed deep in the Atlas cedar forest. A rarely documented species in such intimate natural conditions.", prices: [{ size: "8×10\"", price: 240 }, { size: "11×14\"", price: 340 }, { size: "16×20\"", price: 480 }, { size: "20×30\"", price: 660 }] },
-  { id: "4", photoId: 1101443572, title: "Western Marsh Harrier", location: "Algerian Wetlands", category: "Raptors & Owls", description: "A western marsh harrier banks over the reedbeds in the golden light of early morning. One of several hundred frames from a single morning session.", prices: [{ size: "8×10\"", price: 195 }, { size: "11×14\"", price: 280 }, { size: "16×20\"", price: 395 }, { size: "20×30\"", price: 540 }] },
-  { id: "5", photoId: 1091066214, title: "Short-toed Snake Eagle", location: "Algeria", category: "Raptors & Owls", description: "A short-toed snake eagle hovers above the Algerian scrubland, its pale underside lit by the afternoon sun. A summer visitor to northern Algeria.", prices: [{ size: "8×10\"", price: 210 }, { size: "11×14\"", price: 300 }, { size: "16×20\"", price: 420 }, { size: "20×30\"", price: 580 }] },
-  { id: "6", photoId: 1105984697, title: "European Robin", location: "Algeria", category: "Songbirds", description: "A European robin in close portrait — its orange-red breast glowing in the soft, diffused light of an Atlas forest morning. One of my most-requested images.", prices: [{ size: "8×10\"", price: 165 }, { size: "11×14\"", price: 245 }, { size: "16×20\"", price: 355 }, { size: "20×30\"", price: 490 }] },
+  { id: "1", photoIndex: 10, title: "Large Seagull", location: "Algerian Coast", category: "Waterbirds", description: "A large seagull rides the coastal wind above the Algerian sea. The most viewed image in my portfolio — captured in a single, unguarded moment of flight.", prices: [{ size: "8×10\"", price: 180 }, { size: "11×14\"", price: 260 }, { size: "16×20\"", price: 380 }, { size: "20×30\"", price: 520 }] },
+  { id: "2", photoIndex: 11, title: "Athene noctua", location: "Algeria", category: "Raptors & Owls", description: "The Little Owl watches the world with wide amber eyes in the last light of an Algerian afternoon. An intimate owl portrait made after weeks of patient observation.", prices: [{ size: "8×10\"", price: 220 }, { size: "11×14\"", price: 310 }, { size: "16×20\"", price: 440 }, { size: "20×30\"", price: 600 }] },
+  { id: "3", photoIndex: 12, title: "Strix mauritanica", location: "Atlas Blidéen, Algeria", category: "Raptors & Owls", description: "The Maghreb Owl — endemic to North Africa — photographed deep in the Atlas cedar forest. A rarely documented species in such intimate natural conditions.", prices: [{ size: "8×10\"", price: 240 }, { size: "11×14\"", price: 340 }, { size: "16×20\"", price: 480 }, { size: "20×30\"", price: 660 }] },
+  { id: "4", photoIndex: 13, title: "Western Marsh Harrier", location: "Algerian Wetlands", category: "Raptors & Owls", description: "A western marsh harrier banks over the reedbeds in the golden light of early morning. One of several hundred frames from a single morning session.", prices: [{ size: "8×10\"", price: 195 }, { size: "11×14\"", price: 280 }, { size: "16×20\"", price: 395 }, { size: "20×30\"", price: 540 }] },
+  { id: "5", photoIndex: 8, title: "Short-toed Snake Eagle", location: "Algeria", category: "Raptors & Owls", description: "A short-toed snake eagle hovers above the Algerian scrubland, its pale underside lit by the afternoon sun. A summer visitor to northern Algeria.", prices: [{ size: "8×10\"", price: 210 }, { size: "11×14\"", price: 300 }, { size: "16×20\"", price: 420 }, { size: "20×30\"", price: 580 }] },
+  { id: "6", photoIndex: 17, title: "European Robin", location: "Algeria", category: "Songbirds", description: "A European robin in close portrait — its orange-red breast glowing in the soft, diffused light of an Atlas forest morning. One of my most-requested images.", prices: [{ size: "8×10\"", price: 165 }, { size: "11×14\"", price: 245 }, { size: "16×20\"", price: 355 }, { size: "20×30\"", price: 490 }] },
 ];
 
-export default async function StorePage() {
-  const photos = await fetchAllUserPhotos(3);
-  const photoMap = new Map(photos.map((p) => [p.id, p]));
-
+export default function StorePage() {
   return (
     <>
       <section className="pt-32 pb-12 px-6 md:px-12 max-w-7xl mx-auto">
@@ -48,14 +46,11 @@ export default async function StorePage() {
       <section className="max-w-7xl mx-auto px-6 md:px-12 py-16 md:py-20">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-10">
           {printsMeta.map((print) => {
-            const photo = photoMap.get(print.photoId);
+            const photo = allPhotos[print.photoIndex];
             return (
               <Link key={print.id} href={`/store/${print.id}`} className="group block">
                 <div className="relative aspect-[4/3] overflow-hidden mb-5 bg-warm-gray">
-                  {photo && (
-                    // eslint-disable-next-line @next/next/no-img-element
-                    <img src={photo.image_url} alt={print.title} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
-                  )}
+                  <Image src={photo.src} alt={print.title} fill className="object-cover transition-transform duration-700 group-hover:scale-105" sizes="(max-width: 768px) 100vw, 33vw" />
                 </div>
                 <div className="flex justify-between items-start gap-4">
                   <div>
