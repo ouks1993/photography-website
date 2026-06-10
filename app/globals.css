@@ -1,0 +1,30 @@
+@import "tailwindcss";
+
+@theme {
+  --color-cream: #FAFAF8;
+  --color-charcoal: #1A1A18;
+  --color-accent: #7B6447;
+  --color-warm-gray: #E8E6E0;
+  --color-muted: #6B6460;
+  --color-surface: #F0EDE6;
+}
+
+@theme inline {
+  --font-serif: var(--font-cormorant);
+  --font-sans: var(--font-inter);
+}
+
+body {
+  background-color: #FAFAF8;
+  color: #1A1A18;
+  font-family: var(--font-inter), system-ui, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+::selection {
+  background-color: #7B6447;
+  color: #FAFAF8;
+}
