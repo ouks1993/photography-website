@@ -6,13 +6,6 @@ const hero = allPhotos[16];
 const portrait = allPhotos[26];
 const strip = [allPhotos[1], allPhotos[3], allPhotos[21], allPhotos[14]];
 
-const awards = [
-  { year: "2025", title: "500px Community Award", body: "Top contributor — Wildlife category, North Africa" },
-  { year: "2024", title: "Birds of the Maghreb Exhibition", body: "Featured photographer — Algiers Natural History Museum" },
-  { year: "2023", title: "Algerian Birding Society", body: "Photo of the Year — Strix mauritanica portrait" },
-  { year: "2022", title: "Mediterranean Wildlife Photography Award", body: "Coastal Birds Category — Finalist" },
-];
-
 const gear = [
   { category: "Bodies", items: ["Canon EOS R5", "Canon EOS 7D Mark II (backup)"] },
   { category: "Lenses", items: ["Canon RF 600mm f/4 L IS USM", "Canon EF 100-400mm f/4.5-5.6L IS II", "Canon EF 500mm f/4 L IS II USM"] },
@@ -110,27 +103,9 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Awards */}
-      <section className="bg-surface py-20 md:py-28">
-        <div className="max-w-7xl mx-auto px-6 md:px-12">
-          <p className="text-xs tracking-[0.3em] uppercase text-accent mb-3 font-sans">Recognition</p>
-          <h2 className="font-serif text-4xl md:text-5xl font-light italic mb-12">Awards &amp; Recognition</h2>
-          <div className="divide-y divide-warm-gray">
-            {awards.map((a, i) => (
-              <div key={i} className="py-6 grid grid-cols-[80px_1fr] md:grid-cols-[120px_1fr] gap-6 items-start">
-                <p className="text-muted text-sm font-sans">{a.year}</p>
-                <div>
-                  <p className="text-charcoal font-medium mb-1">{a.title}</p>
-                  <p className="text-muted text-sm">{a.body}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* Gear */}
-      <section className="max-w-7xl mx-auto px-6 md:px-12 py-20 md:py-28">
+      <section className="bg-surface py-20 md:py-28 px-6 md:px-12">
+        <div className="max-w-7xl mx-auto">
         <p className="text-xs tracking-[0.3em] uppercase text-accent mb-3 font-sans">Tools</p>
         <h2 className="font-serif text-4xl md:text-5xl font-light italic mb-12">Camera Gear</h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
@@ -144,6 +119,7 @@ export default function AboutPage() {
               </ul>
             </div>
           ))}
+          </div>
         </div>
       </section>
     </>
