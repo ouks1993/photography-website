@@ -49,13 +49,16 @@ export default function StorePage() {
             const photo = allPhotos[print.photoIndex];
             return (
               <Link key={print.id} href={`/store/${print.id}`} className="group block">
-                <div className="relative aspect-[4/3] overflow-hidden mb-5 bg-warm-gray">
-                  <Image src={photo.src} alt={print.title} fill className="object-cover transition-transform duration-700 group-hover:scale-105" sizes="(max-width: 768px) 100vw, 33vw" />
+                <div className="bg-white p-4 md:p-5 mb-5 shadow-[0_8px_28px_rgba(26,26,24,0.10)] transition-all duration-500 group-hover:-translate-y-1 group-hover:shadow-[0_16px_40px_rgba(26,26,24,0.16)]">
+                  <div className="relative aspect-[4/3] overflow-hidden bg-warm-gray">
+                    <Image src={photo.src} alt={print.title} fill className="object-cover transition-transform duration-700 group-hover:scale-105" sizes="(max-width: 768px) 100vw, 33vw" />
+                  </div>
                 </div>
                 <div className="flex justify-between items-start gap-4">
                   <div>
                     <p className="text-xs tracking-widest uppercase text-muted mb-1 font-sans">{print.location}</p>
                     <h3 className="font-serif text-xl italic font-light group-hover:text-accent transition-colors">{print.title}</h3>
+                    <p className="text-[10px] tracking-[0.2em] uppercase text-muted/70 font-sans mt-1">Edition of 50 · Hand-signed</p>
                   </div>
                   <div className="text-right shrink-0">
                     <p className="text-xs text-muted font-sans">from</p>

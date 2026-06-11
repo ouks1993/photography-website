@@ -80,12 +80,31 @@ export default function AboutPage() {
         </div>
       </section>
 
+      {/* Field stats */}
+      <section className="border-y border-warm-gray">
+        <div className="max-w-7xl mx-auto px-6 md:px-12 py-12 md:py-16 grid grid-cols-3 gap-6 text-center">
+          {[
+            ["100+", "Species documented"],
+            ["10+", "Years in the field"],
+            ["1,200 km", "Of Algerian coastline"],
+          ].map(([num, label]) => (
+            <div key={label}>
+              <p className="font-serif italic font-light text-4xl md:text-6xl text-charcoal mb-2">{num}</p>
+              <p className="text-[10px] md:text-xs tracking-[0.25em] uppercase text-muted font-sans">{label}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
       {/* Gallery strip */}
-      <section className="max-w-7xl mx-auto px-6 md:px-12 pb-20">
+      <section className="max-w-7xl mx-auto px-6 md:px-12 py-16 md:py-20">
         <div className="grid grid-cols-4 gap-2">
           {strip.map((photo) => (
-            <div key={photo.src} className="relative aspect-square overflow-hidden">
-              <Image src={photo.src} alt={photo.alt} fill className="object-cover" sizes="25vw" />
+            <div key={photo.src} className="relative aspect-square overflow-hidden group">
+              <Image src={photo.src} alt={photo.alt} fill className="object-cover transition-transform duration-700 group-hover:scale-105" sizes="25vw" />
+              <div className="absolute inset-x-0 bottom-0 p-3 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 hidden md:block">
+                <p className="text-white text-xs font-serif italic">{photo.title}</p>
+              </div>
             </div>
           ))}
         </div>
