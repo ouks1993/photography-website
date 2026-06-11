@@ -59,4 +59,10 @@ export const allPhotos: LocalPhoto[] = [
   photo("/images/_00A8414-Edit-3.jpg", "Eurasian Hoopoe", "Upupa epops", "Northern Algeria", "open"),
   photo("/images/_00A8698-Enhanced-NR.jpg", "Maghreb Owl", "Strix mauritanica", "Atlas cedar forest, Algeria", "forest"),
   photo("/images/_00A9182-Enhanced-NR-Edit-2.jpg", "Golden Oriole", "Oriolus oriolus", "Eucalyptus grove, Algeria", "forest"),
+  photo("/images/GK3A2635.jpg", "Purple Heron", "Ardea purpurea", "Algerian wetlands", "wetlands"),
+  photo("/images/GK3A3055.jpg", "Short-toed Snake Eagle", "Circaetus gallicus", "Northern Algeria", "open"),
+  photo("/images/GK3A3278.jpg", "Whiskered Tern", "Chlidonias hybrida", "Algerian wetlands", "wetlands"),
+  photo("/images/GK3A5161.jpg", "Western Swamphen", "Porphyrio porphyrio", "Algerian wetlands", "wetlands"),
+  photo("/images/GK3A7404.jpg", "Sardinian Warbler", "Curruca melanocephala", "Northern Algeria", "open"),
+  photo("/images/_00A9793-Edit.jpg", "Western Marsh Harrier", "Circus aeruginosus", "Algerian wetlands", "wetlands"),
 ];
