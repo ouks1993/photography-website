@@ -13,9 +13,9 @@ const blogPosts = [
 ];
 
 const storeMeta = [
-  { id: "1", title: "Large Seagull", price: 180, photo: allPhotos[10] },
-  { id: "2", title: "Athene noctua", price: 220, photo: allPhotos[11] },
-  { id: "3", title: "Strix mauritanica", price: 240, photo: allPhotos[12] },
+  { id: "1", title: "African Blue Tit", price: 180, photo: allPhotos[10] },
+  { id: "2", title: "Common Firecrest", price: 220, photo: allPhotos[11] },
+  { id: "3", title: "Great Cormorant", price: 240, photo: allPhotos[12] },
 ];
 
 export default function HomePage() {
