@@ -36,7 +36,7 @@ export default function AboutPage() {
             </p>
             <div className="space-y-5 text-muted leading-relaxed">
               <p>
-                I am an Algerian nature photographer based in Algeria, with a passion for birds and wildlife of the Maghreb. Over more than a decade behind the camera I have documented species ranging from Maghreb endemics — such as the Strix mauritanica and Barbary partridge — to migratory birds passing through on their journeys between Europe and sub-Saharan Africa.
+                I am an Algerian nature photographer based in Algeria, with a passion for birds and wildlife of the Maghreb. In two intense years behind the camera I have documented species ranging from Maghreb endemics — such as the Strix mauritanica and Barbary partridge — to migratory birds passing through on their journeys between Europe and sub-Saharan Africa.
               </p>
               <p>
                 My main habitats are the forests and mountain streams of the Atlas Blidéen, the wetlands and coastal cliffs of western Algeria, and the scrublands where raptors hunt at dusk. I spend most of my field time within a few hundred kilometres of Algiers, proving that world-class wildlife photography does not require travelling to the ends of the earth.
@@ -78,7 +78,7 @@ export default function AboutPage() {
         <div className="max-w-7xl mx-auto px-6 md:px-12 py-12 md:py-16 grid grid-cols-3 gap-6 text-center">
           {[
             ["100+", "Species documented"],
-            ["10+", "Years in the field"],
+            ["2", "Years in the field"],
             ["1,200 km", "Of Algerian coastline"],
           ].map(([num, label]) => (
             <div key={label}>
