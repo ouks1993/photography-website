@@ -6,12 +6,6 @@ const hero = allPhotos[16];
 const portrait = allPhotos[26];
 const strip = [allPhotos[1], allPhotos[3], allPhotos[21], allPhotos[14]];
 
-const gear = [
-  { category: "Bodies", items: ["Canon EOS R5", "Canon EOS 7D Mark II (backup)"] },
-  { category: "Lenses", items: ["Canon RF 600mm f/4 L IS USM", "Canon EF 100-400mm f/4.5-5.6L IS II", "Canon EF 500mm f/4 L IS II USM"] },
-  { category: "Support", items: ["Gitzo GT5562LTS Tripod", "Wimberley WH-200 Gimbal Head", "Manfrotto 190 for macro"] },
-];
-
 export default function AboutPage() {
   return (
     <>
@@ -103,25 +97,6 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Gear */}
-      <section className="bg-surface py-20 md:py-28 px-6 md:px-12">
-        <div className="max-w-7xl mx-auto">
-        <p className="text-xs tracking-[0.3em] uppercase text-accent mb-3 font-sans">Tools</p>
-        <h2 className="font-serif text-4xl md:text-5xl font-light italic mb-12">Camera Gear</h2>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
-          {gear.map((group) => (
-            <div key={group.category}>
-              <p className="text-xs tracking-[0.2em] uppercase text-muted mb-4 font-sans border-b border-warm-gray pb-3">{group.category}</p>
-              <ul className="space-y-2">
-                {group.items.map((item) => (
-                  <li key={item} className="text-charcoal text-sm leading-relaxed">{item}</li>
-                ))}
-              </ul>
-            </div>
-          ))}
-          </div>
-        </div>
-      </section>
     </>
   );
 }
