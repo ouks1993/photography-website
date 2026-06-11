@@ -27,7 +27,7 @@ export default function BlogPage() {
       <section className="max-w-7xl mx-auto px-6 md:px-12 mb-20">
         <Link href={`/blog/${featured.slug}`} className="group block">
           <div className="relative aspect-[21/9] overflow-hidden mb-6 bg-warm-gray">
-            <Image src={featuredPhoto.src} alt={featured.title} fill className="object-cover transition-transform duration-700 group-hover:scale-105" priority sizes="100vw" />
+            <Image src={featuredPhoto.src} alt={featured.title} fill className={`object-cover transition-transform duration-700 group-hover:scale-105 ${featuredPhoto.pos ?? ""}`} priority sizes="100vw" />
             <div className="absolute top-4 left-4">
               <span className="bg-accent text-cream text-xs tracking-widest uppercase px-3 py-1 font-sans">{featured.category}</span>
             </div>
@@ -56,7 +56,7 @@ export default function BlogPage() {
             return (
               <Link key={post.slug} href={`/blog/${post.slug}`} className="group block">
                 <div className="relative aspect-[4/3] overflow-hidden mb-5 bg-warm-gray">
-                  <Image src={photo.src} alt={post.title} fill className="object-cover transition-transform duration-700 group-hover:scale-105" sizes="(max-width: 768px) 100vw, 33vw" />
+                  <Image src={photo.src} alt={post.title} fill className={`object-cover transition-transform duration-700 group-hover:scale-105 ${photo.pos ?? ""}`} sizes="(max-width: 768px) 100vw, 33vw" />
                   <div className="absolute top-3 left-3">
                     <span className="bg-white/90 text-charcoal text-xs tracking-widest uppercase px-2.5 py-1 font-sans">{post.category}</span>
                   </div>

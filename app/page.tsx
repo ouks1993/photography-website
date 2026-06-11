@@ -133,7 +133,7 @@ export default function HomePage() {
             <Reveal key={post.slug} delay={i * 100}>
               <Link href={`/blog/${post.slug}`} className="group block">
                 <div className="relative aspect-[16/10] overflow-hidden mb-5 bg-warm-gray">
-                  <Image src={post.photo.src} alt={post.title} fill className="object-cover transition-transform duration-700 group-hover:scale-105" sizes="(max-width: 768px) 100vw, 33vw" />
+                  <Image src={post.photo.src} alt={post.title} fill className={`object-cover transition-transform duration-700 group-hover:scale-105 ${post.photo.pos ?? ""}`} sizes="(max-width: 768px) 100vw, 33vw" />
                 </div>
                 <p className="text-xs tracking-widest uppercase text-muted mb-2 font-sans">{post.date}</p>
                 <h3 className="font-serif text-xl md:text-2xl italic font-light mb-2 group-hover:text-accent transition-colors">{post.title}</h3>

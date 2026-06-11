@@ -68,7 +68,7 @@ export default async function BlogPostPage({ params }: { params: Params }) {
     <>
       {/* Hero */}
       <section className="relative h-[70vh] min-h-[400px] overflow-hidden bg-charcoal">
-        <Image src={coverPhoto.src} alt={post.title} fill className="object-cover" priority sizes="100vw" />
+        <Image src={coverPhoto.src} alt={post.title} fill className={`object-cover ${coverPhoto.pos ?? ""}`} priority sizes="100vw" />
         <div className="absolute inset-0 bg-black/40" />
         <div className="absolute inset-0 flex flex-col items-center justify-end pb-16 text-center px-6">
           <span className="bg-accent text-cream text-xs tracking-widest uppercase px-3 py-1 font-sans mb-5">{post.category}</span>
@@ -102,7 +102,7 @@ export default async function BlogPostPage({ params }: { params: Params }) {
               return (
                 <Link key={rp.slug} href={`/blog/${rp.slug}`} className="group block">
                   <div className="relative aspect-[16/9] overflow-hidden mb-4 bg-warm-gray">
-                    <Image src={rPhoto.src} alt={rp.title} fill className="object-cover transition-transform duration-700 group-hover:scale-105" sizes="(max-width: 768px) 100vw, 50vw" />
+                    <Image src={rPhoto.src} alt={rp.title} fill className={`object-cover transition-transform duration-700 group-hover:scale-105 ${rPhoto.pos ?? ""}`} sizes="(max-width: 768px) 100vw, 50vw" />
                   </div>
                   <p className="text-xs tracking-widest uppercase text-muted mb-2 font-sans">{rp.date}</p>
                   <h3 className="font-serif text-xl italic font-light group-hover:text-accent transition-colors">{rp.title}</h3>

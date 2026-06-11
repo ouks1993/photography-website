@@ -7,6 +7,8 @@ export type LocalPhoto = {
   latin: string | null;
   location: string;
   collection: Collection;
+  /** Tailwind object-position class for crops where the subject is off-center */
+  pos?: string;
 };
 
 function photo(
@@ -14,9 +16,10 @@ function photo(
   title: string,
   latin: string | null,
   location: string,
-  collection: Collection
+  collection: Collection,
+  pos?: string
 ): LocalPhoto {
-  return { src, alt: `${title} — ${location}`, title, latin, location, collection };
+  return { src, alt: `${title} — ${location}`, title, latin, location, collection, pos };
 }
 
 export const collections: { key: Collection | "all"; label: string }[] = [
@@ -35,7 +38,7 @@ export const allPhotos: LocalPhoto[] = [
   photo("/images/_00A5182-Edit-2.jpg", "Common Firecrest", "Regulus ignicapilla", "Atlas cedar forest, Algeria", "forest"),
   photo("/images/_00A5447-Enhanced-NR.jpg", "Ridges of the Atlas", null, "Atlas Blidéen, Algeria", "forest"),
   photo("/images/GK3A1996-Enhanced-NR.jpg", "Flamingos in the Shallows", "Phoenicopterus roseus", "Sebkha wetlands, Algeria", "wetlands"),
-  photo("/images/GK3A0048-Edit.jpg", "Melodious Warbler in Song", "Hippolais polyglotta", "Atlas woodland, Algeria", "forest"),
+  photo("/images/GK3A0048-Edit.jpg", "Melodious Warbler in Song", "Hippolais polyglotta", "Atlas woodland, Algeria", "forest", "object-[center_15%]"),
   photo("/images/GK3A0091-Edit.jpg", "Great Tit", "Parus major", "Atlas Blidéen, Algeria", "forest"),
   photo("/images/GK3A1383-Enhanced-SR.jpg", "Black Redstart", "Phoenicurus ochruros", "Northern Algeria", "open"),
   photo("/images/GK3A1435.jpg", "African Blue Tit", "Cyanistes teneriffae ultramarinus", "Atlas woodland, Algeria", "forest"),
