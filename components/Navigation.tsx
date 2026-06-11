@@ -34,16 +34,23 @@ export default function Navigation() {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+      className={`fixed top-0 left-0 right-0 z-50 border-b transition-colors duration-500 ${
         transparent
-          ? "bg-transparent"
-          : "bg-cream/95 backdrop-blur-sm border-b border-warm-gray"
+          ? "bg-transparent border-transparent"
+          : "bg-cream/95 backdrop-blur-sm border-warm-gray"
       }`}
     >
-      <nav className="max-w-7xl mx-auto px-6 md:px-12 flex items-center justify-between h-16 md:h-20">
+      {/* Scrim: keeps white nav text readable over bright hero imagery,
+          fades out as the solid bar fades in */}
+      <div
+        className={`absolute inset-x-0 top-0 h-28 pointer-events-none bg-gradient-to-b from-black/50 via-black/25 to-transparent transition-opacity duration-500 ${
+          transparent ? "opacity-100" : "opacity-0"
+        }`}
+      />
+      <nav className="relative max-w-7xl mx-auto px-6 md:px-12 flex items-center justify-between h-16 md:h-20">
         <Link
           href="/"
-          className={`font-serif text-sm md:text-base tracking-[0.2em] uppercase font-light transition-colors ${
+          className={`font-serif text-sm md:text-base tracking-[0.2em] uppercase font-light transition-colors duration-500 ${
             transparent ? "text-white" : "text-charcoal"
           }`}
         >
@@ -56,7 +63,7 @@ export default function Navigation() {
             <Link
               key={href}
               href={href}
-              className={`text-xs tracking-widest uppercase transition-colors ${
+              className={`text-xs tracking-widest uppercase transition-colors duration-500 ${
                 transparent
                   ? "text-white/80 hover:text-white"
                   : "text-muted hover:text-charcoal"
@@ -67,7 +74,7 @@ export default function Navigation() {
           ))}
           <Link
             href="/store/cart"
-            className={`text-xs tracking-widest uppercase transition-colors relative ${
+            className={`text-xs tracking-widest uppercase transition-colors duration-500 relative ${
               transparent
                 ? "text-white/80 hover:text-white"
                 : "text-muted hover:text-charcoal"
