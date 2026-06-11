@@ -65,7 +65,7 @@ export default function ContactPage() {
                 },
                 {
                   label: "Workshops",
-                  text: "One-to-one mentoring and small group workshops in East Africa and India.",
+                  text: "One-to-one mentoring and small group field workshops in Algeria.",
                 },
                 {
                   label: "Press & Interviews",
@@ -86,11 +86,29 @@ export default function ContactPage() {
                 Direct Contact
               </p>
               <a
-                href="mailto:hello@abdelmalekphoto.com"
+                href="mailto:ouksili.abdelmalek@gmail.com"
                 className="text-charcoal hover:text-accent transition-colors text-sm"
               >
-                hello@abdelmalekphoto.com
+                ouksili.abdelmalek@gmail.com
               </a>
+              <div className="flex gap-6 mt-5">
+                <a
+                  href="https://instagram.com/the_ouks"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-xs tracking-widest uppercase text-muted hover:text-charcoal transition-colors border-b border-transparent hover:border-current pb-0.5"
+                >
+                  Instagram
+                </a>
+                <a
+                  href="https://500px.com/p/abdelmalekouksili"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-xs tracking-widest uppercase text-muted hover:text-charcoal transition-colors border-b border-transparent hover:border-current pb-0.5"
+                >
+                  500px
+                </a>
+              </div>
             </div>
           </div>
 

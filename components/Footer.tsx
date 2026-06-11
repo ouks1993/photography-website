@@ -73,9 +73,9 @@ export default function Footer() {
               </p>
               <ul className="space-y-2">
                 {[
-                  ["Instagram", "https://instagram.com"],
+                  ["Instagram", "https://instagram.com/the_ouks"],
                   ["500px", "https://500px.com/p/abdelmalekouksili"],
-                  ["LinkedIn", "https://linkedin.com"],
+                  ["Email", "mailto:ouksili.abdelmalek@gmail.com"],
                 ].map(([label, href]) => (
                   <li key={href}>
                     <a
