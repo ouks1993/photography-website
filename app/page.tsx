@@ -5,8 +5,13 @@ import { allPhotos } from "@/lib/photos";
 
 const hero = allPhotos[0];
 const featured = [allPhotos[1], allPhotos[2], allPhotos[3]];
-const aboutImg = allPhotos[29]; // Maghreb Owl — the North African endemic
+const owl = allPhotos[29]; // Maghreb Owl — the North African endemic
+const aboutImg = allPhotos[5]; // Ridges of the Atlas (B&W)
 const interlude = allPhotos[6];
+const fieldPhoto = {
+  src: "/images/field-camouflage.jpg",
+  alt: "Abdelmalek Ouksili in full camouflage with his telephoto lens, kneeling in the Atlas cedar forest",
+};
 
 const blogPosts = [
   { slug: "melodious-warbler-in-song", title: "The Melodious Warbler in Full Song", date: "May 12, 2026", excerpt: "Bill thrown wide, a melodious warbler pours out its song from a young Atlas cedar — one of the defining voices of the Algerian spring.", photo: allPhotos[7] },
@@ -81,6 +86,48 @@ export default function HomePage() {
         </Reveal>
       </section>
 
+      {/* Field Story — the Maghreb Owl */}
+      <section className="bg-charcoal text-cream">
+        <div className="max-w-7xl mx-auto px-6 md:px-12 py-20 md:py-28">
+          <div className="grid grid-cols-1 md:grid-cols-12 gap-10 md:gap-14 items-center">
+            <Reveal className="md:col-span-7">
+              <div className="relative aspect-[16/11] overflow-hidden">
+                <Image src={owl.src} alt={owl.alt} fill className="object-cover transition-transform duration-[2000ms] hover:scale-105" sizes="(max-width: 768px) 100vw, 58vw" />
+              </div>
+              <p className="mt-3 text-[10px] tracking-[0.2em] uppercase text-cream/40 font-sans">
+                {owl.title} · <em className="normal-case font-serif text-cream/50">{owl.latin}</em> · {owl.location}
+              </p>
+            </Reveal>
+            <Reveal delay={120} className="md:col-span-5">
+              <div>
+                <p className="text-xs tracking-[0.3em] uppercase text-accent mb-4 font-sans">Field Story</p>
+                <h2 className="font-serif text-4xl md:text-5xl font-light italic leading-tight mb-3">The Maghreb Owl</h2>
+                <p className="font-serif italic text-cream/50 text-lg mb-6">Strix mauritanica</p>
+                <p className="text-cream/70 leading-relaxed mb-4">
+                  Found nowhere on Earth outside North Africa, the Maghreb Owl was only recognised as a species in its own right in 2015. By night it hunts the cedar forests of the Atlas; by day it melts into the bark and disappears.
+                </p>
+                <p className="text-cream/70 leading-relaxed mb-8">
+                  Finding one means weeks of listening at dusk, learning a single bird's habits — and waiting, dressed as the forest itself, for the moment it opens its eyes.
+                </p>
+                <div className="flex items-end gap-5">
+                  <div className="relative w-36 md:w-44 shrink-0 aspect-[3/4] overflow-hidden">
+                    <Image src={fieldPhoto.src} alt={fieldPhoto.alt} fill className="object-cover" sizes="176px" />
+                  </div>
+                  <div>
+                    <p className="text-[10px] tracking-[0.2em] uppercase text-cream/40 font-sans leading-relaxed mb-4">
+                      In full camouflage among the cedars — Atlas Blidéen
+                    </p>
+                    <Link href="/portfolio" className="inline-flex text-xs tracking-[0.3em] uppercase text-cream hover:text-accent transition-colors border-b border-current pb-1">
+                      See the Portfolio
+                    </Link>
+                  </div>
+                </div>
+              </div>
+            </Reveal>
+          </div>
+        </div>
+      </section>
+
       {/* About Teaser */}
       <section className="bg-surface">
         <div className="max-w-7xl mx-auto px-6 md:px-12 py-20 md:py-28 grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-20 items-center">
@@ -88,7 +135,8 @@ export default function HomePage() {
             <div className="relative aspect-[4/5] overflow-hidden">
               <Image src={aboutImg.src} alt={aboutImg.alt} fill className="object-cover" sizes="(max-width: 768px) 100vw, 50vw" />
               <p className="absolute bottom-3 right-4 text-white/60 text-[10px] tracking-[0.2em] uppercase font-sans">
-                {aboutImg.title} · <em className="normal-case font-serif">{aboutImg.latin}</em>
+                {aboutImg.title}
+                {aboutImg.latin && <> · <em className="normal-case font-serif">{aboutImg.latin}</em></>}
               </p>
             </div>
           </Reveal>
@@ -97,7 +145,7 @@ export default function HomePage() {
               <p className="text-xs tracking-[0.3em] uppercase text-accent mb-4 font-sans">About</p>
               <h2 className="font-serif text-4xl md:text-5xl font-light italic leading-tight mb-6">Birds &amp; Wildlife of the Maghreb</h2>
               <p className="text-muted leading-relaxed mb-4">I am an Algerian wildlife photographer specialising in the birds and fauna of North Africa — from the forests and mountains of the Atlas to the wetlands and coastline of the Algerian sea.</p>
-              <p className="text-muted leading-relaxed mb-8">Algeria is home to an extraordinary range of species, many endemic to the Maghreb and rarely photographed — like the Maghreb Owl pictured here, found nowhere outside North Africa. My work aims to document this richness and share it with the world.</p>
+              <p className="text-muted leading-relaxed mb-8">Algeria is home to an extraordinary range of species, many endemic to the Maghreb and rarely photographed. My work aims to document this richness and share it with the world.</p>
               <Link href="/about" className="inline-flex text-xs tracking-[0.3em] uppercase text-charcoal hover:text-accent transition-colors border-b border-current pb-1">Read More</Link>
             </div>
           </Reveal>
