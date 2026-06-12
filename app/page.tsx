@@ -7,7 +7,7 @@ const hero = allPhotos[0];
 const featured = [allPhotos[1], allPhotos[2], allPhotos[3]];
 const owl = allPhotos[29]; // Maghreb Owl — the North African endemic
 const aboutImg = allPhotos[5]; // Ridges of the Atlas (B&W)
-const interlude = allPhotos[6];
+const interlude = allPhotos[36]; // Western Marsh Harrier — open sky leaves room for the quote
 const fieldPhoto = {
   src: "/images/field-camouflage.jpg",
   alt: "Abdelmalek Ouksili in full camouflage with his telephoto lens, kneeling in the Atlas cedar forest",
@@ -156,10 +156,10 @@ export default function HomePage() {
       <section className="relative h-[55vh] min-h-[380px] overflow-hidden">
         <Image src={interlude.src} alt={interlude.alt} fill className="object-cover" sizes="100vw" />
         <div className="absolute inset-0 bg-black/35" />
-        <div className="absolute inset-0 flex items-center justify-center text-center px-6">
+        <div className="absolute inset-0 flex items-end justify-center text-center px-6 pb-14 md:pb-20">
           <Reveal>
             <p className="font-serif italic text-2xl md:text-4xl text-white font-light max-w-3xl leading-snug">
-              "Most of these photographs were made within two hundred kilometres of Algiers."
+              "Most of these photographs were made within five hundred kilometres of Algiers."
             </p>
           </Reveal>
         </div>
