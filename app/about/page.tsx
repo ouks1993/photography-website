@@ -3,7 +3,10 @@ import Link from "next/link";
 import { allPhotos } from "@/lib/photos";
 
 const hero = allPhotos[16];
-const portrait = allPhotos[26];
+const portrait = {
+  src: "/images/abdelmalek-portrait.jpg",
+  alt: "Abdelmalek Ouksili in the field with his camera, Atlas foothills, Algeria",
+};
 const strip = [allPhotos[1], allPhotos[3], allPhotos[21], allPhotos[14]];
 
 export default function AboutPage() {
@@ -52,9 +55,12 @@ export default function AboutPage() {
             </div>
           </div>
           <div className="md:col-span-5">
-            <div className="relative aspect-[3/4] overflow-hidden mb-6">
+            <div className="relative aspect-[3/4] overflow-hidden mb-3">
               <Image src={portrait.src} alt={portrait.alt} fill className="object-cover" sizes="(max-width: 768px) 100vw, 40vw" />
             </div>
+            <p className="text-[10px] tracking-[0.2em] uppercase text-muted font-sans mb-6">
+              In the field — Atlas foothills, Algeria
+            </p>
             <div className="grid grid-cols-2 gap-4 text-sm">
               {[["Based", "Algeria"], ["Speciality", "Birds & Wildlife"], ["Focus Region", "Maghreb & Mediterranean"], ["500px", "El Ouks"]].map(([label, value]) => (
                 <div key={label}>
