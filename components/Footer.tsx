@@ -2,7 +2,7 @@ import Image from "@/components/Photo";
 import Link from "next/link";
 import { allPhotos } from "@/lib/photos";
 
-const closing = allPhotos[12]; // Great Cormorant over silver water
+const closing = allPhotos[33]; // Whiskered Tern — soft, quiet closing note (cormorant repeated the store teaser)
 
 export default function Footer() {
   return (
