@@ -21,9 +21,29 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Abdelmalek Ouksili — Wildlife Photography",
+  metadataBase: new URL("https://elouks.com"),
+  title: {
+    default: "Abdelmalek Ouksili — Wildlife Photography",
+    template: "%s — Abdelmalek Ouksili",
+  },
   description:
-    "Wildlife photography by Abdelmalek Ouksili. Fine art prints available.",
+    "Birds and wildlife of Algeria — from the cedar forests of the Atlas to the Mediterranean coast. Fine art prints available.",
+  openGraph: {
+    type: "website",
+    siteName: "Abdelmalek Ouksili — Wildlife Photography",
+    url: "https://elouks.com",
+    images: [
+      {
+        url: "/og.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Greater Flamingos in flight over the Sebkha wetlands, Algeria — photograph by Abdelmalek Ouksili",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+  },
 };
 
 export default function RootLayout({

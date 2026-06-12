@@ -1,5 +1,12 @@
+import type { Metadata } from "next";
 import { allPhotos } from "@/lib/photos";
 import PhotoGallery from "./_components/PhotoGallery";
+
+export const metadata: Metadata = {
+  title: "Portfolio",
+  description:
+    "Wildlife photographs from Algeria — flamingos of the sebkha, owls of the Atlas cedar forest, seabirds of the Mediterranean coast and more.",
+};
 
 export default function PortfolioPage() {
   return (

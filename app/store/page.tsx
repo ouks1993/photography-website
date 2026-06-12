@@ -1,6 +1,13 @@
+import type { Metadata } from "next";
 import Image from "@/components/Photo";
 import Link from "next/link";
 import { allPhotos } from "@/lib/photos";
+
+export const metadata: Metadata = {
+  title: "Print Shop",
+  description:
+    "Museum-quality giclée prints of Algerian wildlife on Hahnemühle archival paper — signed, numbered, and shipped worldwide.",
+};
 
 export type PrintMeta = {
   id: string;

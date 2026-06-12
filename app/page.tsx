@@ -30,7 +30,7 @@ export default function HomePage() {
     <>
       {/* Hero */}
       <section className="relative h-screen min-h-[600px] overflow-hidden">
-        <Image src={hero.src} alt={hero.alt} fill className="object-cover kenburns" priority sizes="100vw" />
+        <Image src={hero.src} alt={hero.alt} fill className="object-cover kenburns" preload sizes="100vw" />
         <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-black/20 to-black/60" />
         <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-6">
           <p className="text-white/70 text-xs tracking-[0.4em] uppercase mb-6 font-sans">Wildlife &amp; Bird Photography</p>
@@ -66,7 +66,7 @@ export default function HomePage() {
               <div className="relative aspect-[4/3] md:h-full overflow-hidden">
                 <Image src={featured[0].src} alt={featured[0].alt} fill className="object-cover transition-transform duration-700 group-hover:scale-105" sizes="(max-width: 768px) 100vw, 66vw" />
                 <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300" />
-                <div className="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-black/60 to-transparent translate-y-2 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300">
+                <div className="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-black/60 to-transparent opacity-100 md:opacity-0 md:translate-y-2 md:group-hover:translate-y-0 md:group-hover:opacity-100 transition-all duration-300">
                   <p className="text-white font-serif text-xl italic">{featured[0].title}</p>
                   <p className="text-white/60 text-[10px] tracking-[0.2em] uppercase font-sans mt-1">{featured[0].location}</p>
                 </div>
@@ -76,7 +76,7 @@ export default function HomePage() {
               <div key={photo.src} className="group relative overflow-hidden aspect-[4/3] md:aspect-auto">
                 <Image src={photo.src} alt={photo.alt} fill className="object-cover transition-transform duration-700 group-hover:scale-105" sizes="(max-width: 768px) 100vw, 33vw" />
                 <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300" />
-                <div className="absolute bottom-0 left-0 right-0 p-5 bg-gradient-to-t from-black/60 to-transparent translate-y-2 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300">
+                <div className="absolute bottom-0 left-0 right-0 p-5 bg-gradient-to-t from-black/60 to-transparent opacity-100 md:opacity-0 md:translate-y-2 md:group-hover:translate-y-0 md:group-hover:opacity-100 transition-all duration-300">
                   <p className="text-white font-serif text-lg italic">{photo.title}</p>
                   <p className="text-white/60 text-[10px] tracking-[0.2em] uppercase font-sans mt-1">{photo.location}</p>
                 </div>

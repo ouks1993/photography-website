@@ -1,6 +1,13 @@
+import type { Metadata } from "next";
 import Image from "@/components/Photo";
 import Link from "next/link";
 import { allPhotos } from "@/lib/photos";
+
+export const metadata: Metadata = {
+  title: "About",
+  description:
+    "Abdelmalek Ouksili is an Algerian wildlife photographer documenting the birds of the Maghreb — from Atlas endemics like the Maghreb Owl to the migrants of the Mediterranean coast.",
+};
 
 const hero = allPhotos[16];
 const portrait = {
@@ -14,7 +21,7 @@ export default function AboutPage() {
     <>
       {/* Hero */}
       <section className="relative h-[60vh] min-h-[400px] overflow-hidden">
-        <Image src={hero.src} alt={hero.alt} fill className="object-cover" priority sizes="100vw" />
+        <Image src={hero.src} alt={hero.alt} fill className="object-cover" preload sizes="100vw" />
         <div className="absolute inset-0 bg-black/45" />
         <div className="absolute inset-0 flex items-end px-6 md:px-12 pb-16 max-w-7xl mx-auto">
           <div>
@@ -91,11 +98,11 @@ export default function AboutPage() {
 
       {/* Gallery strip */}
       <section className="max-w-7xl mx-auto px-6 md:px-12 py-16 md:py-20">
-        <div className="grid grid-cols-4 gap-2">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-2">
           {strip.map((photo) => (
             <div key={photo.src} className="relative aspect-square overflow-hidden group">
-              <Image src={photo.src} alt={photo.alt} fill className="object-cover transition-transform duration-700 group-hover:scale-105" sizes="25vw" />
-              <div className="absolute inset-x-0 bottom-0 p-3 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 hidden md:block">
+              <Image src={photo.src} alt={photo.alt} fill className="object-cover transition-transform duration-700 group-hover:scale-105" sizes="(max-width: 768px) 50vw, 25vw" />
+              <div className="absolute inset-x-0 bottom-0 p-3 bg-gradient-to-t from-black/60 to-transparent opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-300">
                 <p className="text-white text-xs font-serif italic">{photo.title}</p>
               </div>
             </div>

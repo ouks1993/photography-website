@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Image from "@/components/Photo";
 import Link from "next/link";
 import { notFound } from "next/navigation";
@@ -8,6 +9,17 @@ type Params = Promise<{ slug: string }>;
 
 export async function generateStaticParams() {
   return posts.map((p) => ({ slug: p.slug }));
+}
+
+export async function generateMetadata({ params }: { params: Params }): Promise<Metadata> {
+  const { slug } = await params;
+  const post = posts.find((p) => p.slug === slug);
+  if (!post) return {};
+  return {
+    title: post.title,
+    description: post.excerpt,
+    openGraph: { images: [allPhotos[post.photoIndex].src] },
+  };
 }
 
 const postContent: Record<string, string[]> = {
@@ -68,7 +80,7 @@ export default async function BlogPostPage({ params }: { params: Params }) {
     <>
       {/* Hero */}
       <section className="relative h-[70vh] min-h-[400px] overflow-hidden bg-charcoal">
-        <Image src={coverPhoto.src} alt={post.title} fill className={`object-cover ${coverPhoto.pos ?? ""}`} priority sizes="100vw" />
+        <Image src={coverPhoto.src} alt={post.title} fill className={`object-cover ${coverPhoto.pos ?? ""}`} preload sizes="100vw" />
         <div className="absolute inset-0 bg-black/40" />
         <div className="absolute inset-0 flex flex-col items-center justify-end pb-16 text-center px-6">
           <span className="bg-accent text-cream text-xs tracking-widest uppercase px-3 py-1 font-sans mb-5">{post.category}</span>

@@ -126,10 +126,10 @@ export default function PhotoGallery({ photos }: { photos: LocalPhoto[] }) {
                 onContextMenu={noContext}
                 className="w-full h-auto block transition-transform duration-700 group-hover:scale-105 select-none pointer-events-none"
                 sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                priority={i < 3}
+                preload={i < 3}
               />
               <div className="absolute inset-0 bg-black/0 group-hover:bg-black/25 transition-colors duration-300" />
-              <div className="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black/70 to-transparent translate-y-2 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300">
+              <div className="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black/70 to-transparent opacity-100 md:opacity-0 md:translate-y-2 md:group-hover:translate-y-0 md:group-hover:opacity-100 transition-all duration-300">
                 <p className="text-white text-sm font-serif italic">{photo.title}</p>
                 <p className="text-white/60 text-[10px] tracking-[0.2em] uppercase font-sans mt-0.5">
                   {photo.location}

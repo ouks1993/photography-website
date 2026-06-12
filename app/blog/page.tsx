@@ -1,6 +1,13 @@
+import type { Metadata } from "next";
 import Image from "@/components/Photo";
 import Link from "next/link";
 import { allPhotos } from "@/lib/photos";
+
+export const metadata: Metadata = {
+  title: "Journal",
+  description:
+    "Field notes from Algeria — stories from behind the photographs: warblers in song, shearwaters at sea, and long waits in the Atlas cedar forest.",
+};
 
 export const posts = [
   { slug: "melodious-warbler-in-song", title: "The Melodious Warbler in Full Song", date: "May 12, 2026", category: "Warblers", excerpt: "Bill wide open, a melodious warbler pours out its song from a young Atlas cedar. A summer visitor that fills the Algerian woodlands with sound from April onward.", photoIndex: 7, featured: true },
@@ -27,7 +34,7 @@ export default function BlogPage() {
       <section className="max-w-7xl mx-auto px-6 md:px-12 mb-20">
         <Link href={`/blog/${featured.slug}`} className="group block">
           <div className="relative aspect-[21/9] overflow-hidden mb-6 bg-warm-gray">
-            <Image src={featuredPhoto.src} alt={featured.title} fill className={`object-cover transition-transform duration-700 group-hover:scale-105 ${featuredPhoto.pos ?? ""}`} priority sizes="100vw" />
+            <Image src={featuredPhoto.src} alt={featured.title} fill className={`object-cover transition-transform duration-700 group-hover:scale-105 ${featuredPhoto.pos ?? ""}`} preload sizes="100vw" />
             <div className="absolute top-4 left-4">
               <span className="bg-accent text-cream text-xs tracking-widest uppercase px-3 py-1 font-sans">{featured.category}</span>
             </div>
