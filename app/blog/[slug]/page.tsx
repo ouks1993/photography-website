@@ -65,6 +65,13 @@ const postContent: Record<string, string[]> = {
     "The North African great tits belong to a distinct population, slightly different in tone from their European relatives, and they are residents here throughout the year. In winter they join roving mixed flocks with tits, firecrests and warblers that move through the forest together.",
     "Photographing the common birds well is, to me, the heart of this work. Anyone will stop for a rare species; it takes patience to give an everyday bird like the great tit the careful, considered portrait it deserves.",
   ],
+  "woodpecker-of-aghribs": [
+    "Long before you see it, you hear it: a hard, rolling drumroll that carries through the trees, then the sharp 'kik' of alarm as the bird swings round to the far side of a trunk. The great spotted woodpecker (Dendrocopos major) is a bird you earn slowly, and the wooded hills above Aghribs, in the Kabylie highlands of Tizi Ouzou, are one of the finest places in Algeria to look for it.",
+    "The North African birds belong to a distinct subspecies, Dendrocopos major numidus, and they wear a feature their European cousins lack: a broad band of red washing across the lower breast, between the black-and-white of the head and the crimson of the vent. You can see it clearly here, on a bird working the deeply furrowed bark of an old oak, pied wings pressed flat and tail braced against the trunk like a third leg.",
+    "I spent the morning of a warm August day moving quietly through the cork and zen oaks that clothe these slopes. Woodpeckers are restless and wary, forever hitching upward in short jerks and slipping out of sight behind the bole, so the work is one of patience and angles — waiting for the bird to come round to the lit side of the tree, framed by lichen and the soft green of the canopy beyond.",
+    "The second frame caught the bird higher up, bill tilted skyward in the dappled light that filters through the Kabylie woodland, the trunk dark with moss and age. These ancient oak forests, watered by the humid air that rolls in off the Mediterranean, are among the richest woodland habitats in the country, and the woodpecker is one of their defining voices.",
+    "August is a quiet month in the birding calendar — the spring song is long over and the autumn passage has not begun — but the resident woodpeckers are there all year, tied to their trees. To stand still in the oaks of Aghribs and watch one chisel its way up a trunk is to feel the deep, settled life of these mountains, far older and slower than any season.",
+  ],
 };
 
 export default async function BlogPostPage({ params }: { params: Params }) {

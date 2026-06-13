@@ -16,6 +16,7 @@ export const posts = [
   { slug: "firecrest-the-smallest-jewel", title: "Firecrest, the Smallest Jewel", date: "January 7, 2026", category: "Kinglets", excerpt: "One of North Africa's tiniest birds, a common firecrest carries a feather to its nest. Barely nine grams of fire-crowned energy among the Atlas conifers.", photoIndex: 11, featured: false },
   { slug: "black-redstart-on-bare-ground", title: "Black Redstart on Bare Ground", date: "November 22, 2025", category: "Chats", excerpt: "Sooty grey with a burning rust-red tail, a black redstart pauses on broken earth. A hardy bird equally at home on mountain crags and Algerian rooftops.", photoIndex: 9, featured: false },
   { slug: "great-tit-of-the-atlas", title: "A Great Tit in the Atlas Woods", date: "October 5, 2025", category: "Tits", excerpt: "A young great tit works through the canopy of an Atlas oak. Familiar across Algeria, yet always worth the patience for a clean frame in dappled forest light.", photoIndex: 8, featured: false },
+  { slug: "woodpecker-of-aghribs", title: "A Woodpecker in the Oaks of Aghribs", date: "August 16, 2025", category: "Woodpeckers", excerpt: "Drumming through the cork oaks above Aghribs, a great spotted woodpecker clings to a lichen-covered trunk. A morning in the wooded hills of Tizi Ouzou, in the heart of Kabylie.", photoIndex: 36, featured: false },
 ];
 
 export default function BlogPage() {
