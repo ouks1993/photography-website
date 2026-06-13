@@ -68,4 +68,6 @@ export const allPhotos: LocalPhoto[] = [
   photo("/images/GK3A5161.jpg", "Western Swamphen", "Porphyrio porphyrio", "Algerian wetlands", "wetlands"),
   photo("/images/GK3A7404.jpg", "Sardinian Warbler", "Curruca melanocephala", "Northern Algeria", "open"),
   photo("/images/_00A9793-Edit.jpg", "Western Marsh Harrier", "Circus aeruginosus", "Algerian wetlands", "wetlands"),
+  photo("/images/_00A1440-Edit.jpg", "Great Spotted Woodpecker", "Dendrocopos major numidus", "Aghribs, Tizi Ouzou, Algeria", "forest"),
+  photo("/images/_00A1399-Edit-2.jpg", "Great Spotted Woodpecker in Dappled Light", "Dendrocopos major numidus", "Aghribs, Tizi Ouzou, Algeria", "forest"),
 ];
